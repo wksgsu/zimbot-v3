@@ -69,8 +69,8 @@ const setting = JSON.parse(fs.readFileSync('./apikey.json'))
 
 //buat info zvibhorani zivi
 limitawal = '100'
-botname = 'ZIM BOT INC'
-wm = 'ZIM BOT INC'
+botname = 'SATA'
+wm = 'SATA'
 global.reactmoji = '🇿🇼'
 limitCount = setting.limit
 
@@ -119,9 +119,9 @@ module.exports = ZimBotInc = async (ZimBotInc, m, chatUpdate, store) => {
         const participants = m.isGroup ? await groupMetadata.participants : ''
         const groupAdmins = m.isGroup ? await participants.filter(v => v.admin !== null).map(v => v.id) : ''
         const groupOwner = m.isGroup ? groupMetadata.owner : ''
-    	const isBotAdmins = m.isGroup ? groupAdmins.includes(botNumber) : false
-    	const isAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false
-        const isAntiwame = m.isGroup ? antiwame.includes(m.chat) : false
+    	const isBotAdmins = m.isGroup ? groupAdmins.includes(botNumber) : true
+    	const isAdmins = m.isGroup ? groupAdmins.includes(m.sender) : true
+        const isAntiwame = m.isGroup ? antiwame.includes(m.chat) : true 
         const isAntiVirtex = m.isGroup ? _antivirtex.includes(m.chat) : false
         const isAntilinkyt = m.isGroup ? antilinkyt.includes(m.chat) : false
         const isAntibule = m.isGroup ? antibule.includes(m.chat) : false
@@ -435,7 +435,7 @@ randek = jsonDrips[randIndex];
         if (!('templateDoc' in setting)) setting.templateDoc = false
 	    } else global.db.data.settings[botNumber] = {
 		status: 0,
-		autobio: false,
+		autobio: true,
 		templateImage: false,
 		templateLocation: false,
 		templateGif: true,
@@ -1899,7 +1899,7 @@ break
                     if (!isAdmins) throw mess.admin
     let teks = ` 
      ┏━━━━━━━━━━━┑
-     ┃🌟𝗧𝗔𝗚𝗔𝗟𝗟🌟
+     ┃🌟تگ آل🌟
      ┃┄┄┄┄┄┄┄┄┄┄┄┊
      ┃*𝐌𝐄𝐒𝐒𝐀𝐆𝐄 : ${q ? q : 'blank'}*\n\n
      ┗━━━━━━━━ 
